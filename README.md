@@ -1,10 +1,11 @@
-#Technological Requirements
+# **Technological Requirements**
 
-- Database (MongoDB/MySQL)
+- Database (MySQL)
 - ReactNative
 - Redux (state management)
 - Possible sync with MyFitnessPal https://github.com/coddingtonbear/python-myfitnesspal
-#Problems Addressed
+
+# **Problems Addressed**
 
 - Food wastage
 - Sick of eating same thing everyday

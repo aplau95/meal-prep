@@ -1,144 +1,42 @@
 import React from 'react';
-import { List, ListItem } from 'react-native-elements';
+import { List } from 'react-native-elements';
 import {
+  ListView,
   View,
   Text,
   TouchableOpacity,
   AsyncStorage,
   Button, Navigator,
   ScrollView,
+  SectionList,
 } from 'react-native';
 
-const list = [
-  {
-    title: 'Appointments',
-    icon: 'av-timer'
-  },
-  {
-    title: 'Trips',
-    icon: 'flight-takeoff'
-  },
-  {
-    title: 'Appointments',
-    icon: 'av-timer'
-  },
-  {
-    title: 'Trips',
-    icon: 'flight-takeoff'
-  },
-  {
-    title: 'Appointments',
-    icon: 'av-timer'
-  },
-  {
-    title: 'Trips',
-    icon: 'flight-takeoff'
-  },
-  {
-    title: 'Appointments',
-    icon: 'av-timer'
-  },
-  {
-    title: 'Trips',
-    icon: 'flight-takeoff'
-  },
-  {
-    title: 'Appointments',
-    icon: 'av-timer'
-  },
-  {
-    title: 'Trips',
-    icon: 'flight-takeoff'
-  },
-  {
-    title: 'Appointments',
-    icon: 'av-timer'
-  },
-  {
-    title: 'Trips',
-    icon: 'flight-takeoff'
-  },
-  {
-    title: 'Appointments',
-    icon: 'av-timer'
-  },
-  {
-    title: 'Trips',
-    icon: 'flight-takeoff'
-  },
-  {
-    title: 'Appointments',
-    icon: 'av-timer'
-  },
-  {
-    title: 'Trips',
-    icon: 'flight-takeoff'
-  },
-  {
-    title: 'Appointments',
-    icon: 'av-timer'
-  },
-  {
-    title: 'Trips',
-    icon: 'flight-takeoff'
-  },
-  {
-    title: 'Appointments',
-    icon: 'av-timer'
-  },
-  {
-    title: 'Trips',
-    icon: 'flight-takeoff'
-  },
-  {
-    title: 'Appointments',
-    icon: 'av-timer'
-  },
-  {
-    title: 'Trips',
-    icon: 'flight-takeoff'
-  },
-  
-]
-
 export default class GroceryList extends React.Component{
-  constructor() {
-    super()
-
-    this.navigate = this.navigate.bind(this)
+  renderItem = (item) => {
+    return <Text>{item.item.name}</Text>
   }
 
-  navigate(name){
-    this.props.navigator.push({
-      name
-    })
-  }
+  renderHeader = (item) => {
 
-  alertMe(title){
-    alert(title);
   }
 
   render(){
-
     return (
       <View>
-        <ScrollView>
-          <List>
-            {
-              list.map((item, i) => (
-                <ListItem
-                  key={i}
-                  title={item.title}
-                  leftIcon={{name: item.icon}}
-                  onPress = {() => this.alertMe(item.title)}
-                />
-              ))
-            }
-          </List>
-
-        </ScrollView>
       </View>
     );
+  }
+
+  displayData = async () => {
+    try{
+      let food = await AsyncStorage.getItem('food');
+      let parse = JSON.parse(food);
+      //Description
+      alert(parse[1].text);
+    }
+    catch(error){
+      alert('error')
+    }
   }
 
 }
