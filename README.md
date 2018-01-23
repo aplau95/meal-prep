@@ -1,8 +1,7 @@
 # **Technological Requirements**
 
-- Database (MySQL)
 - ReactNative
-- Redux (state management)
+- Firebase (data storage and user authentication)
 - Possible sync with MyFitnessPal https://github.com/coddingtonbear/python-myfitnesspal
 
 # **Problems Addressed**
