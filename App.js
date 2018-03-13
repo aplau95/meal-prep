@@ -37,7 +37,7 @@ class App extends Component {
 
   render() {
     if (this.state.userLoaded) {
-    return <Login />;
+    return <RootTabs />;
   } else {
     return <RootTabs />;
   }

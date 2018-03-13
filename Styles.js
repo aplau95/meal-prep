@@ -6,8 +6,8 @@ const constants = {
 
 var styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f2f2f2',
     flex: 1,
+    paddingTop: 33,
   },
   listview: {
     flex: 1,

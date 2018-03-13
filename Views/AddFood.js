@@ -16,9 +16,8 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Constants } from 'expo';
 import { SearchBar } from 'react-native-elements';
+import AddButton from '../Components/AddButton/AddButton'
 
-
-import FoodItem from '../Forms/FoodItem'
 
 
 const _ = require('lodash')
@@ -51,8 +50,6 @@ const list = [
     text: ''
   },
 ]
-
-var asdf = false
 
 
 export default class AddFood extends React.Component{
